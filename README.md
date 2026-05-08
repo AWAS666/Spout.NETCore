@@ -12,6 +12,10 @@ Feel free to contribute to fix any bugs if anything comes up.
 
 [nuget package](https://www.nuget.org/packages/Spout.NETCore/)
 
+## Notice
+
+Both the sender and receiver need to use the same gpu context, so if you are on a laptop and one uses the IGpu and one the dedicated one, the frame sending will fail, but the receiver will still detect the sender (this tends to happen if you use this to send to obs studio as it defaults to the dedicated GPU whereas your code may not)
+
 Sample Code (same as .net framework variant):
 ```cs
 using System;
